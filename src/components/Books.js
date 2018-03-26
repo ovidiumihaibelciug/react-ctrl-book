@@ -9,20 +9,21 @@ class Books extends Component {
         this.props.fetchBooks();
     }
 
+    componentDidMount = () => {
+        console.log(this.props.books);
+    }
+
     render() {
         return (
             <div>
-                {this.props.books.map(book => {
-                    return <div>{book.name}</div>
-                })}
+               {this.props.books.id}
             </div>
         )
     }
 }
 
-
 const mapStateToProps = state => ({
-    books: state.books.items
+    books: state.books.items  
 })
 
-export default connect(mapStateToProps, { fetchBooks })(Books)
+export default connect(mapStateToProps, { fetchBooks })(Books);
