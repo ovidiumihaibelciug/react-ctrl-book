@@ -9,11 +9,8 @@ class Books extends Component {
         this.props.fetchBooks();
     }
 
-    componentDidMount = () => {
-        console.log(this.props.books);
-    }
-
     render() {
+        console.log(this.props.books.id);
         return (
             <div>
                {this.props.books.id}

@@ -1,3 +1,27 @@
-body {
-    background-color: red;
-}
+/*
+* Only imports here
+*/
+
+/* font-awesome */
+@import '../../../node_modules/font-awesome/scss/_variables.scss';
+$fa-font-path: "~font-awesome/fonts";
+@import "../../../node_modules/font-awesome/scss/font-awesome";
+
+/* Vars */
+@import '_vars';
+
+/* Resets */
+@import '_resets';
+
+/* General styles */
+@import '_inc';
+
+/*
+  ***   COMPONENTS   ***
+*/
+
+/* Main Navbar */
+@import '_navbar';
+
+
+

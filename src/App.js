@@ -1,4 +1,5 @@
 import Books from './components/Books'
+import Navbar from './components/Navbar'
 
 import React, { Component } from 'react';
 
@@ -11,7 +12,8 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className="App">
-          <Books />
+          {/* <Books /> */}
+          <Navbar />
         </div>
       </Provider>
     );
