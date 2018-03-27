@@ -1,6 +1,8 @@
 import Books from './components/Books'
 import Navbar from './components/Navbar'
 
+import HomeContainer from './containers/HomeContainer'
+
 import React, { Component } from 'react';
 
 import store from './store/store';
@@ -14,6 +16,7 @@ class App extends Component {
         <div className="App">
           {/* <Books /> */}
           <Navbar />
+          <HomeContainer />
         </div>
       </Provider>
     );

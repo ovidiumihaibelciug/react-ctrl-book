@@ -2340,7 +2340,10 @@
   box-sizing: border-box; }
 
 html, body {
-  width: 100%; }
+  width: 100%;
+  font-family: Helvetica, sans-serif;
+  margin: 0;
+  padding: 0; }
 
 /* General styles */
 .container {
@@ -2367,19 +2370,23 @@ html, body {
 /* Main Navbar */
 .navbar {
   margin: 0;
-  height: auto;
+  min-height: 50px;
   background-color: white;
   border-bottom: 2px solid #F3F3F3;
   width: 100%;
   border-radius: 0; }
   .navbar .container {
     display: flex;
-    flex-wrap: nowrap; }
+    flex-wrap: nowrap;
+    min-height: 50px; }
     .navbar .container .navbar-start {
       flex: 1;
       display: flex;
       justify-content: flex-start;
       align-items: center; }
+      .navbar .container .navbar-start .navbar-brand {
+        margin-right: 10px;
+        /* change this */ }
       .navbar .container .navbar-start .navbar-search {
         position: relative; }
         .navbar .container .navbar-start .navbar-search .fa-search {
@@ -2398,9 +2405,10 @@ html, body {
           border-radius: 5px;
           line-height: 10px;
           transition: all .8s ease;
-          text-indent: 15px; }
+          text-indent: 15px;
+          width: 250px; }
           .navbar .container .navbar-start .navbar-search input:focus {
-            padding-right: 150px;
+            width: 400px;
             transition: all .8s ease; }
     .navbar .container .navbar-end {
       flex: 1;
@@ -2419,7 +2427,8 @@ html, body {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         border-bottom: 1px solid transparent;
         height: 100%;
-        margin: 0 10px; }
+        margin: 0 10px;
+        font-size: 1rem; }
         .navbar .container .navbar-end .navbar-item:hover {
           color: #0984e3;
           border-color: #0984e3; }
@@ -2427,3 +2436,123 @@ html, body {
           border-color: #2980b9;
           border-width: 2px;
           color: #0984e3; }
+
+/*
+  ***   PAGES   ***
+*/
+/* Home */
+.home-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-top: 30px; }
+  .home-container .home-book-box {
+    height: 250px !important;
+    -webkit-box-shadow: 0px 10px 49px -4px rgba(0, 0, 0, 0.35);
+    -moz-box-shadow: 0px 10px 49px -4px rgba(0, 0, 0, 0.35);
+    box-shadow: 0px 10px 49px -4px rgba(0, 0, 0, 0.35); }
+  .home-container :not(:first-child):not(:last-child) {
+    margin: 0 30px;
+    border-radius: 20px;
+    flex: 4; }
+    .home-container :not(:first-child):not(:last-child) .home-book-box-content {
+      padding: 30px 20px 20px 20px; }
+  .home-container :first-child {
+    margin-right: 10px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    flex: 3; }
+    .home-container :first-child .home-book-box-content {
+      padding: 30px 20px 20px 0; }
+  .home-container :last-child {
+    margin-left: 10px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    flex: 3; }
+    .home-container :last-child .home-book-box-content {
+      padding: 30px 20px 20px 0;
+      text-align: left; }
+
+.box-purple {
+  background: #4e54c8;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #BCB0FE, #C1B7FB);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #BCB0FE, #C1B7FB);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+  .box-purple .home-book-img {
+    -webkit-box-shadow: 4px 14px 41px -7px #705BED;
+    -moz-box-shadow: 4px 14px 41px -7px #705BED;
+    box-shadow: 4px 14px 41px -7px #705BED; }
+  .box-purple .box-star {
+    color: #a999ff;
+    text-shadow: none; }
+
+.box-red {
+  background: #f4c4f3;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #FAA8B3, #FECFD1);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #FAA8B3, #FECFD1);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+  .box-red .home-book-img {
+    -webkit-box-shadow: 4px 14px 41px -7px #FD7589;
+    -moz-box-shadow: 4px 14px 41px -7px #FD7589;
+    box-shadow: 4px 14px 41px -7px #FD7589; }
+  .box-red .box-star {
+    color: #F8A0AC;
+    text-shadow: none; }
+
+.box-blue {
+  background: #74ebd5;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #C1E8FE, #96D6FF);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #C1E8FE, #96D6FF);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+  .box-blue .home-book-img {
+    -webkit-box-shadow: 4px 14px 41px -7px #4997c3;
+    -moz-box-shadow: 4px 14px 41px -7px #4997c3;
+    box-shadow: 4px 14px 41px -7px #4997c3; }
+  .box-blue .box-star {
+    color: #88D0FF;
+    text-shadow: none; }
+
+.home-book-box-content {
+  display: flex;
+  color: white;
+  height: 100%; }
+  .home-book-box-content .left-side {
+    flex: 2; }
+    .home-book-box-content .left-side .home-book-img {
+      height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url("https://marketplace.canva.com/MAB___U-clw/1/0/thumbnail_large/canva-yellow-lemon-children-book-cover-MAB___U-clw.jpg");
+      transform: translateY(0);
+      transition: .3s; }
+      .home-book-box-content .left-side .home-book-img:hover {
+        transform: translateY(-10px);
+        transition: .3s; }
+  .home-book-box-content .right-side {
+    flex: 3; }
+    .home-book-box-content .right-side .home-book-title-box .home-book-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-align: left; }
+    .home-book-box-content .right-side .home-book-author {
+      font-size: .9rem;
+      text-align: left;
+      margin-left: 10px; }
+      .home-book-box-content .right-side .home-book-author span {
+        font-weight: 600; }
+    .home-book-box-content .right-side .home-book-rating {
+      margin: 0; }
+      .home-book-box-content .right-side .home-book-rating .box-star {
+        display: inline-block;
+        margin: 0;
+        padding: 3px; }
+        .home-book-box-content .right-side .home-book-rating .box-star.box-star-active {
+          color: white !important;
+          text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5), -1px -1px 1px rgba(255, 255, 255, 0.5); }

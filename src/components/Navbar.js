@@ -9,7 +9,7 @@ export default class Navbar extends Component {
                         <div className="navbar-start">
                             <div className="navbar-brand">Brand</div>
                             <div className="navbar-search">
-                                <span class="fa fa-search"></span>
+                                <span className="fa fa-search"></span>
                                 <input type="text" placeholder="Search books..." />
                             </div>
                         </div>

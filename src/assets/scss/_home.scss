@@ -1,0 +1,142 @@
+.home-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-top: 30px;
+    .home-book-box {
+        height: 250px !important;
+        -webkit-box-shadow: 0px 10px 49px -4px rgba(0,0,0,.35);
+        -moz-box-shadow: 0px 10px 49px -4px rgba(0,0,0,.35);
+        box-shadow: 0px 10px 49px -4px rgba(0,0,0,.35);
+    }
+    :not(:first-child):not(:last-child) {
+        margin: 0 30px;
+        border-radius: 20px;
+        .home-book-box-content {
+            padding: 30px 20px 20px 20px;
+        }
+        flex: 4;
+    }
+    :first-child {
+        margin-right: 10px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        flex: 3;
+        .home-book-box-content {
+            padding: 30px 20px 20px 0;
+        }
+    }
+    :last-child {
+        margin-left: 10px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        flex: 3;
+        .home-book-box-content {
+            padding: 30px 20px 20px 0;
+            text-align: left;
+        }
+    }   
+}
+
+.box-purple {
+    background: #4e54c8;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #BCB0FE, #C1B7FB);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #BCB0FE, #C1B7FB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    .home-book-img {
+        -webkit-box-shadow: 4px 14px 41px -7px #705BED;
+        -moz-box-shadow: 4px 14px 41px -7px #705BED;
+        box-shadow: 4px 14px 41px -7px #705BED;
+    }
+    .box-star {
+        color:  rgb(169, 153, 255);
+        text-shadow: none;        
+    }
+}
+
+.box-red {
+    background: #f4c4f3;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #FAA8B3, #FECFD1);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #FAA8B3, #FECFD1); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    .home-book-img {
+        -webkit-box-shadow: 4px 14px 41px -7px #FD7589;
+        -moz-box-shadow: 4px 14px 41px -7px #FD7589;
+        box-shadow: 4px 14px 41px -7px #FD7589;
+    }
+    .box-star {
+        color:  #F8A0AC;
+        text-shadow: none;        
+    }
+}
+
+.box-blue {
+    background: #74ebd5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #C1E8FE, #96D6FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #C1E8FE,#96D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    .home-book-img {
+        -webkit-box-shadow: 4px 14px 41px -7px rgba(73,151,195,1);
+        -moz-box-shadow: 4px 14px 41px -7px rgba(73,151,195,1);
+        box-shadow: 4px 14px 41px -7px rgba(73,151,195,1);
+    }
+    .box-star {
+        color:  #88D0FF;
+        text-shadow: none;
+    }
+}
+
+
+.home-book-box-content {
+    display: flex;
+    color: white;
+
+    height: 100%;
+    .left-side {
+        flex: 2;
+        .home-book-img {
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url('https://marketplace.canva.com/MAB___U-clw/1/0/thumbnail_large/canva-yellow-lemon-children-book-cover-MAB___U-clw.jpg');
+            transform: translateY(0);
+            transition: .3s;            
+            &:hover {
+                transform: translateY(-10px);
+                transition: .3s;
+            }
+        }
+
+    }
+    .right-side {
+        flex: 3;
+        
+        .home-book-title-box {
+            .home-book-title {
+                font-size: 1.4rem;
+                font-weight: 700;
+                text-align: left;
+            }
+        }
+        .home-book-author {
+            font-size: .9rem;
+            text-align: left;
+            margin-left: 10px;
+            span {
+                font-weight: 600;
+            }
+        }
+        .home-book-rating {
+            margin: 0;
+            .box-star {
+                display: inline-block;
+                margin: 0;
+                padding: 3px;
+                &.box-star-active {
+                    color: white !important;
+                    text-shadow: 1px 1px 1px rgba(255, 255, 255, .5), -1px -1px  1px rgba(255, 255, 255, .5);
+                }
+            }
+            
+        }
+        
+    }
+}
