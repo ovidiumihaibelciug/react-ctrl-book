@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
-import Box from '../components/home/Box';
+import HeaderBox from '../components/home/HeaderBox';
+import BookBox from '../components/BookBox';
 
 class HomeContainer extends Component {
 
@@ -11,9 +12,22 @@ class HomeContainer extends Component {
         ];
         return (
             <div className="home-container">
-                <Box color="box-blue" cover={img[0]} />
-                <Box color="box-purple" cover={img[1]} />
-                <Box color="box-red" cover={img[2]} />
+                <div className="home-header">
+                    <HeaderBox color="box-blue" cover={img[0]} />
+                    <HeaderBox color="box-purple" cover={img[1]} />
+                    <HeaderBox color="box-red" cover={img[2]} />
+                </div>
+                <div className="home-body container">
+                    <div className="left-side">
+                        sdkfjsndkfnskdf
+                    </div>
+                    <div></div>
+                    <div className="right-side-container">
+                        <BookBox />
+                        <BookBox />
+                        <BookBox />
+                    </div>
+                </div>
             </div>
         )
     }

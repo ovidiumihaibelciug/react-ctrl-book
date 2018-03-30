@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import Rating from '../Rating';
 
-class Box extends Component {
+class HeaderBox extends Component {
 
     render() {
         let className = ['home-book-box', this.props.color].join(' ');
@@ -26,7 +26,8 @@ class Box extends Component {
                         <div className="home-book-rating">
                             <Rating score="3" />
                         </div>
-                        {/* <div className="home-book-customers">adasd</div> */}
+                        <button class="home-book-btn" style={{color: this.props.color}}>See The Book</button>
+                       {/* <input type="submit" class="home-book-btn" value="See The Book" /> */}
                     </div>
                 </div>
             </div>
@@ -34,4 +35,4 @@ class Box extends Component {
     }
 }
 
-export default Box;
+export default HeaderBox;

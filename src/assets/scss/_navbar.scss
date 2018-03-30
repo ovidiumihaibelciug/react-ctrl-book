@@ -1,14 +1,17 @@
 .navbar {
     margin: 0;
-    min-height: 50px;
+    min-height: $navbar-size;
     background-color: white;
     border-bottom: 2px solid #F3F3F3;
     width: 100%;
-    border-radius: 0;    
+    border-radius: 0;
+    -webkit-box-shadow: 0 0 1px 1px rgba(20,23,28,.1), 0 3px 1px 0 rgba(20,23,28,.1);
+    -moz-box-shadow: 0 0 1px 1px rgba(20,23,28,.1), 0 3px 1px 0 rgba(20,23,28,.1);
+    box-shadow: 0 0 1px 1px rgba(20,23,28,.1), 0 3px 1px 0 rgba(20,23,28,.1); 
     .container {
         display: flex;
         flex-wrap: nowrap;
-        min-height: 50px;
+        min-height: $navbar-size;
         .navbar-start {
             flex: 1;
             display: flex;
