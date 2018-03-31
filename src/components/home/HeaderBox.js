@@ -26,7 +26,7 @@ class HeaderBox extends Component {
                         <div className="home-book-rating">
                             <Rating score="3" />
                         </div>
-                        <button class="home-book-btn" style={{color: this.props.color}}>See The Book</button>
+                        <button className="home-book-btn" style={{color: this.props.color}}>See The Book</button>
                        {/* <input type="submit" class="home-book-btn" value="See The Book" /> */}
                     </div>
                 </div>

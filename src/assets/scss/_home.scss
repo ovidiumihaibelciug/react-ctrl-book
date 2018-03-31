@@ -9,13 +9,23 @@
             -webkit-box-shadow: 0px 10px 49px -4px rgba(0,0,0,.35);
             -moz-box-shadow: 0px 10px 49px -4px rgba(0,0,0,.35);
             box-shadow: 0px 10px 49px -4px rgba(0,0,0,.35);
+            transition: all .5s ease-in-out;            
+            &:hover {
+                transition: all .5s ease-in-out;
+                flex: 5;
+            }
         }
         :not(:first-child):not(:last-child) {
-            margin: 0 30px;
+            margin: 0 15px;
             border-radius: 20px;
             flex: 4;
             .home-book-box-content {
                 padding: 30px 20px 20px 20px;
+            }
+            transition: all .5s ease-in-out;            
+            &:hover {
+                transition: all .5s ease-in-out;
+                flex: 5;
             }
             // .home-book-btn {
             //     margin-top: 20px;
@@ -29,6 +39,11 @@
             .home-book-box-content {
                 padding: 30px 20px 20px 0;
             }
+            transition: all .5s ease-in-out;            
+            &:hover {
+                transition: all .5s ease-in-out;
+                flex: 5;
+            }
         }
         :last-child {
             margin-left: 10px;
@@ -39,7 +54,7 @@
                 padding: 30px 20px 20px 0;
                 text-align: left;
             }
-        }   
+        }
     } 
 }
 
@@ -177,6 +192,7 @@
                 display: inline-block;
                 margin: 0;
                 padding: 2px;
+                // width: 100%;
                 &.box-star-active {
                     color: white !important;
                     text-shadow: 1px 1px 1px rgba(255, 255, 255, .5), -1px -1px  1px rgba(255, 255, 255, .5);
@@ -204,81 +220,198 @@
 .home-body {
     margin-top: 120px;
     display: grid;
-    grid-template-columns: 220px 20px auto;
+    grid-template-columns: 240px auto;
+    grid-template-rows: 240px auto;
     .right-side-container {
-        display: grid;
-        grid-template-columns: 50% 50%;
-        .book-box {
-            padding: 10px;
-            height: 256px;
-            margin-top: 14px;
-            width: 442px;
-            margin-bottom: 120px;
-            background-color: white;
-            border: 2px solid #ECEFF1;
-            border-radius: 10px;
-            box-shadow: 0px 5px 5px -5px rgba(0,0,0,.35);
+        .book-list {
             display: grid;
-            grid-template-columns: 40% auto;
-            grid-template-rows: 90% auto;
-            .likes {
-                border-top: 1px solid #CFCFCF;
-                display: flex;
-                align-items: center;
-                color: rgb(167, 167, 167);
-            }
-            .right-side {
+            grid-template-columns: 50% 50%;
+            .book-box {
+                padding: 10px;
+                height: 256px;
+                margin-top: 14px;
+                width: 442px;
+                margin-bottom: 120px;
+                background-color: white;
+                border: 2px solid #ECEFF1;
+                border-radius: 10px;
+                box-shadow: 0px 5px 5px -5px rgba(0,0,0,.35);
                 display: grid;
-                grid-template-rows: 5% 15% 15% 15% auto 15%;
-                margin-left: 20px;
-                .settings {
-                    text-align: right !important;
-                    color: rgba(0,0,0,.45);
-                    width: auto;
-                    i {
-                        padding: 5px;
-                        &:hover {
-                           cursor: pointer; 
+                grid-template-columns: 40% auto;
+                grid-template-rows: 90% auto;
+                .likes {
+                    border-top: 1px solid #CFCFCF;
+                    display: flex;
+                    align-items: center;
+                    color: rgb(167, 167, 167);
+                }
+                .right-side {
+                    display: grid;
+                    grid-template-rows: 5% 15% 15% 15% auto 15%;
+                    margin-left: 20px;
+                    .settings {
+                        text-align: right !important;
+                        color: rgba(0,0,0,.45);
+                        width: auto;
+                        i {
+                            padding: 5px;
+                            &:hover {
+                               cursor: pointer; 
+                            }
                         }
                     }
-                }
-                .title {
-                    font-size: 1.3rem;
-                    color: #576574;
-                    font-weight: 500;
-                }
-                .author {
-                    font-size: .9rem;
-                    color: #6a737c;
-                    font-weight: 500;
-                }
-                .rating {
-                    .box-star-active {
-                        color: goldenrod !important;
+                    .title {
+                        font-size: 1.3rem;
+                        color: #576574;
+                        font-weight: 500;
                     }
-                    .box-star {
-                        color: #CFCFCF;
+                    .author {
+                        font-size: .9rem;
+                        color: #6a737c;
+                        font-weight: 500;
+                    }
+                    .rating {
+                        .box-star-active {
+                            color: goldenrod !important;
+                        }
+                        .box-star {
+                            color: #CFCFCF;
+                        }
+                    }
+                    .description {
+                        font-size: .9rem;
+                        color: #34495e;
+                        line-height: 1.4rem;
+                        letter-spacing: 0.1px;
+                        font-weight: 300;
+                        width: 100%;
                     }
                 }
-                .description {
-                    font-size: .9rem;
-                    color: #34495e;
-                    line-height: 1.4rem;
-                    letter-spacing: 0.1px;
-                    font-weight: 300;
-                    width: 100%;
-                }
-            }
-            .left-side {
-                .image {
-                    // margin: 10px;
-                    max-height: 256px;
-                    margin-top: -70px;
-                    -webkit-box-shadow: -3px 5px 23px -5px rgba(0,0,0,0.61);
-                    -moz-box-shadow: -3px 5px 23px -5px rgba(0,0,0,0.61);
-                    box-shadow: -3px 5px 23px -5px rgba(0,0,0,0.61);
+                .left-side {
+                    .image {
+                        // margin: 10px;
+                        max-height: 256px;
+                        margin-top: -70px;
+                        -webkit-box-shadow: -3px 5px 23px -5px rgba(0,0,0,0.61);
+                        -moz-box-shadow: -3px 5px 23px -5px rgba(0,0,0,0.61);
+                        box-shadow: -3px 5px 23px -5px rgba(0,0,0,0.61);
+                    }
                 }
             }
         }
     }
+}
+
+.secondary-nav {
+    margin-bottom: $home-margin * 2;
+    // border-bottom: 1px solid;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #E6EAED;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    .secondary-nav-start {
+        font-size: 1.3rem;
+        color:  #3b4d5e;
+        padding-bottom: 10px;
+    }
+    .secondary-nav-end {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .navbar-item {
+            // flex: 1;
+            padding: 15px;
+            margin: 0 10px 0 10px;
+            text-decoration: none;
+            color: #969CA2;
+            font-size: 1rem;
+            font-weight: 500 !important;
+            height: 100%;
+            border: 1px solid transparent;
+            word-wrap: none !important;
+            &:hover, &:hover &:not(.active-secnav) {
+                color: $navbar_secondary;
+                // border-bottom: 1px solid;
+                border-bottom-style: solid;
+                border-bottom-color: $navbar_secondary;
+            }
+            &:active, &.active-secnav {
+                color: $navbar_primary;
+                position: relative;
+                &:before {
+                    content : "";
+                    position: absolute;
+                    left    : 25%;
+                    bottom  : -1px;
+                    height  : 1px;
+                    width   : 50%;  /* or 100px */
+                    -webkit-box-shadow: 0px -4px 31px 0px $navbar_primary;
+                    -moz-box-shadow: 0px -4px 31px 0px $navbar_primary;
+                    box-shadow: 0px -4px 31px 0px $navbar_primary;
+                    border-bottom-width: 3px;
+                    border-bottom-style: solid;
+                    border-bottom-color: $navbar_primary !important;
+                    // border-bottom:1px solid magenta;
+                  }
+            }
+        }
+    }
+}
+
+.side-section {
+    &:not(:first-child) {
+        margin-top: $home-margin * 1.5;
+    }
+    .side-section-title {
+        font-size: 1.3rem;
+        color:  $text-blue;
+        padding-bottom: 10px;
+    }
+    .side-section-user {
+        padding: 5px 0;
+        display: flex;
+        // justify-content: center;
+        align-items: center;
+        color: $text-blue;
+        font-weight: 600;
+        .side-section-user-img {
+            height: 50px;
+            width: 50px;
+            margin-right: 10px;
+            border-radius: 100%;
+            background: url('https://www.andrew-mason.com/wp/wp-content/uploads/2017/04/Corporate-Portrait-Photography-2.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+    }
+
+    .side-section-book {
+        padding: 5px 0;
+        display: flex;
+        // align-items: center;
+        .side-section-book-img {
+            margin-right: 10px;
+            height: 100px;
+            width: 50px;
+            background: url('https://about.canva.com/wp-content/uploads/sites/3/2015/01/creative_bookcover.png');
+            background-size: cover;
+            background-position: center center;
+        }
+        .side-section-book-details {
+            display: grid;
+            grid-template-rows: 60% auto;
+            .side-section-book-title {
+                color: $text-blue;
+                font-size: 1.2rem;
+                font-weight: 500;
+            }
+            .side-section-book-author {
+                font-size: .9rem;
+                color: #6a737c;
+            }
+        }
+    }
+    
 }
