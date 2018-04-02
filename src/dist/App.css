@@ -2349,6 +2349,9 @@ html, body {
   padding: 0;
   background-color: #F2F5F7; }
 
+a {
+  text-decoration: none !important; }
+
 /* General styles */
 .container {
   padding-right: 0px;

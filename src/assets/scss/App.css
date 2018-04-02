@@ -2457,20 +2457,32 @@ html, body {
     height: 250px !important;
     -webkit-box-shadow: 0px 10px 49px -4px rgba(0, 0, 0, 0.35);
     -moz-box-shadow: 0px 10px 49px -4px rgba(0, 0, 0, 0.35);
-    box-shadow: 0px 10px 49px -4px rgba(0, 0, 0, 0.35); }
+    box-shadow: 0px 10px 49px -4px rgba(0, 0, 0, 0.35);
+    transition: all .5s ease-in-out; }
+    .home-container .home-header .home-book-box:hover {
+      transition: all .5s ease-in-out;
+      flex: 5; }
   .home-container .home-header :not(:first-child):not(:last-child) {
-    margin: 0 30px;
+    margin: 0 15px;
     border-radius: 20px;
-    flex: 4; }
+    flex: 4;
+    transition: all .5s ease-in-out; }
     .home-container .home-header :not(:first-child):not(:last-child) .home-book-box-content {
       padding: 30px 20px 20px 20px; }
+    .home-container .home-header :not(:first-child):not(:last-child):hover {
+      transition: all .5s ease-in-out;
+      flex: 5; }
   .home-container .home-header :first-child {
     margin-right: 10px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    flex: 3; }
+    flex: 3;
+    transition: all .5s ease-in-out; }
     .home-container .home-header :first-child .home-book-box-content {
       padding: 30px 20px 20px 0; }
+    .home-container .home-header :first-child:hover {
+      transition: all .5s ease-in-out;
+      flex: 5; }
   .home-container .home-header :last-child {
     margin-left: 10px;
     border-top-left-radius: 20px;
@@ -2612,11 +2624,12 @@ html, body {
 .home-body {
   margin-top: 120px;
   display: grid;
-  grid-template-columns: 220px 20px auto; }
-  .home-body .right-side-container {
+  grid-template-columns: 240px auto;
+  grid-template-rows: 240px auto; }
+  .home-body .right-side-container .book-list {
     display: grid;
     grid-template-columns: 50% 50%; }
-    .home-body .right-side-container .book-box {
+    .home-body .right-side-container .book-list .book-box {
       padding: 10px;
       height: 256px;
       margin-top: 14px;
@@ -2629,45 +2642,137 @@ html, body {
       display: grid;
       grid-template-columns: 40% auto;
       grid-template-rows: 90% auto; }
-      .home-body .right-side-container .book-box .likes {
+      .home-body .right-side-container .book-list .book-box .likes {
         border-top: 1px solid #CFCFCF;
         display: flex;
         align-items: center;
         color: #a7a7a7; }
-      .home-body .right-side-container .book-box .right-side {
+      .home-body .right-side-container .book-list .book-box .right-side {
         display: grid;
         grid-template-rows: 5% 15% 15% 15% auto 15%;
         margin-left: 20px; }
-        .home-body .right-side-container .book-box .right-side .settings {
+        .home-body .right-side-container .book-list .book-box .right-side .settings {
           text-align: right !important;
           color: rgba(0, 0, 0, 0.45);
           width: auto; }
-          .home-body .right-side-container .book-box .right-side .settings i {
+          .home-body .right-side-container .book-list .book-box .right-side .settings i {
             padding: 5px; }
-            .home-body .right-side-container .book-box .right-side .settings i:hover {
+            .home-body .right-side-container .book-list .book-box .right-side .settings i:hover {
               cursor: pointer; }
-        .home-body .right-side-container .book-box .right-side .title {
+        .home-body .right-side-container .book-list .book-box .right-side .title {
           font-size: 1.3rem;
           color: #576574;
           font-weight: 500; }
-        .home-body .right-side-container .book-box .right-side .author {
+        .home-body .right-side-container .book-list .book-box .right-side .author {
           font-size: .9rem;
           color: #6a737c;
           font-weight: 500; }
-        .home-body .right-side-container .book-box .right-side .rating .box-star-active {
+        .home-body .right-side-container .book-list .book-box .right-side .rating .box-star-active {
           color: goldenrod !important; }
-        .home-body .right-side-container .book-box .right-side .rating .box-star {
+        .home-body .right-side-container .book-list .book-box .right-side .rating .box-star {
           color: #CFCFCF; }
-        .home-body .right-side-container .book-box .right-side .description {
+        .home-body .right-side-container .book-list .book-box .right-side .description {
           font-size: .9rem;
           color: #34495e;
           line-height: 1.4rem;
           letter-spacing: 0.1px;
           font-weight: 300;
           width: 100%; }
-      .home-body .right-side-container .book-box .left-side .image {
+      .home-body .right-side-container .book-list .book-box .left-side .image {
         max-height: 256px;
         margin-top: -70px;
         -webkit-box-shadow: -3px 5px 23px -5px rgba(0, 0, 0, 0.61);
         -moz-box-shadow: -3px 5px 23px -5px rgba(0, 0, 0, 0.61);
         box-shadow: -3px 5px 23px -5px rgba(0, 0, 0, 0.61); }
+
+.secondary-nav {
+  margin-bottom: 100px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #E6EAED;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between; }
+  .secondary-nav .secondary-nav-start {
+    font-size: 1.3rem;
+    color: #3b4d5e;
+    padding-bottom: 10px; }
+  .secondary-nav .secondary-nav-end {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .secondary-nav .secondary-nav-end .navbar-item {
+      padding: 15px;
+      margin: 0 10px 0 10px;
+      text-decoration: none;
+      color: #969CA2;
+      font-size: 1rem;
+      font-weight: 500 !important;
+      height: 100%;
+      border: 1px solid transparent;
+      word-wrap: none !important; }
+      .secondary-nav .secondary-nav-end .navbar-item:hover, .secondary-nav .secondary-nav-end .navbar-item:hover .secondary-nav .secondary-nav-end .navbar-item:not(.active-secnav) {
+        color: #2980b9;
+        border-bottom-style: solid;
+        border-bottom-color: #2980b9; }
+      .secondary-nav .secondary-nav-end .navbar-item:active, .secondary-nav .secondary-nav-end .navbar-item.active-secnav {
+        color: #0984e3;
+        position: relative; }
+        .secondary-nav .secondary-nav-end .navbar-item:active:before, .secondary-nav .secondary-nav-end .navbar-item.active-secnav:before {
+          content: "";
+          position: absolute;
+          left: 25%;
+          bottom: -1px;
+          height: 1px;
+          width: 50%;
+          /* or 100px */
+          -webkit-box-shadow: 0px -4px 31px 0px #0984e3;
+          -moz-box-shadow: 0px -4px 31px 0px #0984e3;
+          box-shadow: 0px -4px 31px 0px #0984e3;
+          border-bottom-width: 3px;
+          border-bottom-style: solid;
+          border-bottom-color: #0984e3 !important; }
+
+.side-section:not(:first-child) {
+  margin-top: 75px; }
+
+.side-section .side-section-title {
+  font-size: 1.3rem;
+  color: #3b4d5e;
+  padding-bottom: 10px; }
+
+.side-section .side-section-user {
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+  color: #3b4d5e;
+  font-weight: 600; }
+  .side-section .side-section-user .side-section-user-img {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+    border-radius: 100%;
+    background: url("https://www.andrew-mason.com/wp/wp-content/uploads/2017/04/Corporate-Portrait-Photography-2.jpg");
+    background-size: cover;
+    background-position: center; }
+
+.side-section .side-section-book {
+  padding: 5px 0;
+  display: flex; }
+  .side-section .side-section-book .side-section-book-img {
+    margin-right: 10px;
+    height: 100px;
+    width: 50px;
+    background: url("https://about.canva.com/wp-content/uploads/sites/3/2015/01/creative_bookcover.png");
+    background-size: cover;
+    background-position: center center; }
+  .side-section .side-section-book .side-section-book-details {
+    display: grid;
+    grid-template-rows: 60% auto; }
+    .side-section .side-section-book .side-section-book-details .side-section-book-title {
+      color: #3b4d5e;
+      font-size: 1.2rem;
+      font-weight: 500; }
+    .side-section .side-section-book .side-section-book-details .side-section-book-author {
+      font-size: .9rem;
+      color: #6a737c; }

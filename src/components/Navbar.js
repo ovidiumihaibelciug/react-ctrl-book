@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import {NavLink} from 'react-router-dom';
+
 export default class Navbar extends Component {  
     render() {
         return (
@@ -14,7 +16,7 @@ export default class Navbar extends Component {
                             </div>
                         </div>
                         <div className="navbar-end">
-                            <div className="navbar-item active-item">Home</div>
+                            <NavLink to='/' exact className="navbar-item" activeClassName="active-item">Home</NavLink>
                             <div className="navbar-item navbar-dropdown">
                                 <span>Hello, Ovidiu</span>
                                 {/* <a href="" class="">My Books</a> */}
