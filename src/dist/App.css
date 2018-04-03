@@ -2851,3 +2851,93 @@ a {
         background-color: #3789c7; }
       .profile-body .profile-general .profile-general-follow-btn:active {
         background-color: #3b86b8; }
+  .profile-body .profile-bio {
+    margin-top: 20px;
+    padding: 20px;
+    line-height: 1.4rem;
+    color: rgba(0, 0, 0, 0.7);
+    max-height: 226px;
+    overflow-y: auto; }
+    .profile-body .profile-bio h3 {
+      margin-top: 0 !important; }
+  .profile-body .profile-bookshelf {
+    margin-top: 20px; }
+    .profile-body .profile-bookshelf .profile-header {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: rgba(0, 0, 0, 0.75);
+      padding: 10px;
+      border-bottom: 1px solid #ECEFF1; }
+    .profile-body .profile-bookshelf .profile-options {
+      display: flex;
+      width: 100%; }
+      .profile-body .profile-bookshelf .profile-options .profile-option {
+        width: 50%;
+        text-align: center;
+        padding: 10px;
+        color: rgba(0, 0, 0, 0.65);
+        font-size: 1.2rem;
+        border-bottom: 3px solid rgba(0, 0, 0, 0.1); }
+        .profile-body .profile-bookshelf .profile-options .profile-option:hover {
+          color: #0984e3;
+          cursor: pointer; }
+        .profile-body .profile-bookshelf .profile-options .profile-option.profile-option-active {
+          color: #0984e3;
+          border-bottom-color: #0984e3; }
+    .profile-body .profile-bookshelf .profile-filters {
+      padding: 15px;
+      display: flex; }
+      .profile-body .profile-bookshelf .profile-filters * {
+        margin: 5px; }
+      .profile-body .profile-bookshelf .profile-filters div {
+        font-size: .9rem;
+        color: rgba(0, 0, 0, 0.75);
+        padding-top: 8px !important; }
+      .profile-body .profile-bookshelf .profile-filters select {
+        padding: 8px;
+        border-radius: 5px; }
+    .profile-body .profile-bookshelf .profile-book-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; }
+      .profile-body .profile-bookshelf .profile-book-list .profile-book-box {
+        margin-bottom: 20px;
+        width: 25%; }
+        .profile-body .profile-bookshelf .profile-book-list .profile-book-box .book-img {
+          height: 250px;
+          margin: 0 30px 8px 30px;
+          background-size: cover;
+          background-position: center center; }
+        .profile-body .profile-bookshelf .profile-book-list .profile-book-box .book-title {
+          text-align: center;
+          color: rgba(0, 0, 0, 0.75);
+          font-weight: 600; }
+  .profile-body .profile-following-box {
+    margin-top: 20px;
+    width: 90%;
+    padding: 20px; }
+    .profile-body .profile-following-box .header {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+      color: rgba(0, 0, 0, 0.65); }
+      .profile-body .profile-following-box .header .all {
+        color: #2980b9;
+        cursor: pointer; }
+        .profile-body .profile-following-box .header .all:hover {
+          color: #0984e3;
+          text-decoration: underline; }
+    .profile-body .profile-following-box .profile-following-list {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap; }
+      .profile-body .profile-following-box .profile-following-list .f-user-item {
+        height: 50px;
+        width: 50px;
+        margin: 5px;
+        border-radius: 100%;
+        background-size: cover;
+        background-position: center center; }

@@ -10,7 +10,7 @@ const routes = [
     {
         path: '/',
         component: Home
-    }, 
+    },
     {
         path: '/profile/:username',
         component: Profile

@@ -37,7 +37,7 @@
             margin-top: $profile-margin - 5px;
             font-size: 1.4rem;
             font-weight: 600;
-            color: rgba(0, 0, 0, .75)
+            color: rgba(0, 0, 0, .75);
         }
         .profile-general-details {
             display: flex;
@@ -73,6 +73,122 @@
             }
             &:active {
                 background-color: #3b86b8;
+            }
+        }
+    }
+    .profile-bio {
+        margin-top: $profile-margin;
+        padding: 20px;
+        line-height: 1.4rem;
+        color: rgba(0, 0, 0, .7);
+        max-height: 226px;
+        overflow-y: auto;
+        h3 {
+            margin-top: 0 !important;
+        }
+    }
+    .profile-bookshelf {
+        margin-top: $profile-margin;
+        .profile-header {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: rgba(0, 0, 0, .75);
+            padding: 10px;
+            border-bottom: 1px solid $box-border-color;
+        }
+        .profile-options {
+            display: flex;
+            width: 100%;
+            .profile-option {
+                width: 50%;
+                text-align: center;
+                padding: 10px;
+                color: rgba(0, 0, 0, .65);
+                font-size: 1.2rem;
+                border-bottom: 3px solid rgba(0, 0, 0, .1);
+                &:hover {
+                    color: $navbar_primary;
+                    cursor: pointer;
+                    // border-bottom-color: $navbar_primary;
+                }
+                &.profile-option-active {
+                    color: $navbar_primary;                    
+                    border-bottom-color: $navbar_primary;
+                }
+            }
+        }
+        .profile-filters {
+            padding: 15px;
+            display: flex;
+            * {
+                margin: 5px;
+            }
+
+            div {
+                font-size: .9rem;
+                color: rgba(0, 0, 0, .75);
+                padding-top: 8px !important;
+            }
+
+            select {
+                padding: 8px;
+                border-radius: 5px;
+            }
+        }
+        .profile-book-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            .profile-book-box {
+                margin-bottom: 20px;
+                width: 25%;
+                .book-img {
+                    height: 250px;
+                    margin: 0 30px 8px 30px;
+                    background-size: cover;
+                    background-position: center center;
+                }
+                .book-title {
+                    text-align: center;
+                    color: rgba(0, 0, 0, .75);
+                    font-weight: 600;
+                }
+            }
+        }
+      
+    }
+    .profile-following-box {
+        margin-top: $profile-margin;
+        width: 90%;
+        padding: 20px;
+        .header {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(0, 0, 0, .15);
+            color: rgba(0, 0, 0, .65);
+            .all {
+                color: $navbar_secondary;
+                cursor: pointer;
+                &:hover {
+                    color: $navbar_primary;
+                    text-decoration: underline;
+                }
+            }
+        }
+        .profile-following-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            .f-user-item {
+                height: 50px;
+                width: 50px;
+                margin: 5px;
+                border-radius: 100%;
+                background-size:cover;
+                background-position: center center;
             }
         }
     }
