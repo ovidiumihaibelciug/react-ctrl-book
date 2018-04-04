@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-import HeaderBox from '../components/home/HeaderBox';
 import BookBox from '../components/BookBox';
+import HeaderBox from '../components/home/HeaderBox';
 import SecondaryNav from '../components/SecondaryNav';
 import SideBar from '../components/home/SideBar';
 

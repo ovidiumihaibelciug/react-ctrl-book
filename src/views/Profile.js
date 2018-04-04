@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+import Footer from '../components/Footer';
 import Navbar from '../components/Navbar'
 import ProfileContainer from '../containers/ProfileContainer'
 
@@ -9,6 +10,7 @@ export class Profile extends Component {
       <div>
         <Navbar />
         <ProfileContainer />
+        <Footer />        
       </div>
     )
   }
