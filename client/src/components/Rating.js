@@ -4,6 +4,7 @@ export default class Rating extends Component {
 
     render() {
         let score = this.props.score;
+       
         let totalScore = 5;
         let negativeScore = totalScore - score;
 
@@ -20,6 +21,7 @@ export default class Rating extends Component {
 
 
         return arr;
+        
       
     }
 

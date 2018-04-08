@@ -4,20 +4,22 @@ import Rating from '../components/Rating'
 
 export default class BookBox extends Component {
     render() {
+        let {volumeInfo} = this.props.book;
+        let rating = !volumeInfo.averageRating ? 0 : Math.floor(volumeInfo.averageRating);
         return (
             <div className="book-box">                
                 <div className="left-side">
-                    <img src="https://99designs-blog.imgix.net/wp-content/uploads/2017/12/attachment_83090027.jpg?auto=format&q=60&fit=max&w=930" className="image" alt="" />
+                    <img src={volumeInfo.imageLinks.thumbnail} className="image" alt="" />
                 </div>
                 <div className="right-side">
                     <div className="settings"><i className="fa fa-ellipsis-v fa-lg"></i></div>
-                    <div className="title">Act Like It</div>
-                    <div className="author">by Lucy Parker</div>
+                    <div className="title">{volumeInfo.title}</div>
+                    <div className="author">by {volumeInfo.authors.map(author => author)}</div>
                     <div className="rating">
-                        <Rating score="3" />
+                        <Rating score={rating} /> {!rating ? ' No votes' : ''}
                     </div>
                     <div className="description">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, dolor? Veritatis, minima veniam? Natus, velit. 
+                        {volumeInfo.description}
                     </div>
                 </div>
                 <div className="likes">

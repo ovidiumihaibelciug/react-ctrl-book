@@ -2772,7 +2772,7 @@ footer {
         color: #a7a7a7; }
       .home-body .right-side-container .book-list .book-box .right-side {
         display: grid;
-        grid-template-rows: 5% 15% 15% 15% auto 15%;
+        grid-template-rows: 5% 25% 15% 15% auto 15%;
         margin-left: 20px; }
         .home-body .right-side-container .book-list .book-box .right-side .settings {
           text-align: right !important;
@@ -2801,12 +2801,16 @@ footer {
           letter-spacing: 0.1px;
           font-weight: 300;
           width: 100%; }
-      .home-body .right-side-container .book-list .book-box .left-side .image {
-        max-height: 256px;
-        margin-top: -70px;
-        -webkit-box-shadow: -3px 5px 23px -5px rgba(0, 0, 0, 0.61);
-        -moz-box-shadow: -3px 5px 23px -5px rgba(0, 0, 0, 0.61);
-        box-shadow: -3px 5px 23px -5px rgba(0, 0, 0, 0.61); }
+      .home-body .right-side-container .book-list .book-box .left-side {
+        display: flex;
+        justify-content: center; }
+        .home-body .right-side-container .book-list .book-box .left-side .image {
+          height: 256px;
+          margin-left: 5px;
+          margin-top: -70px;
+          -webkit-box-shadow: -3px 5px 23px -5px rgba(0, 0, 0, 0.61);
+          -moz-box-shadow: -3px 5px 23px -5px rgba(0, 0, 0, 0.61);
+          box-shadow: -3px 5px 23px -5px rgba(0, 0, 0, 0.61); }
 
 .secondary-nav {
   margin-bottom: 100px;

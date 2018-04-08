@@ -247,7 +247,7 @@
                 }
                 .right-side {
                     display: grid;
-                    grid-template-rows: 5% 15% 15% 15% auto 15%;
+                    grid-template-rows: 5% 25% 15% 15% auto 15%;
                     margin-left: 20px;
                     .settings {
                         text-align: right !important;
@@ -288,9 +288,12 @@
                     }
                 }
                 .left-side {
+                    display: flex;
+                    justify-content: center;
                     .image {
                         // margin: 10px;
-                        max-height: 256px;
+                        height: 256px;
+                        margin-left: 5px;
                         margin-top: -70px;
                         -webkit-box-shadow: -3px 5px 23px -5px rgba(0,0,0,0.61);
                         -moz-box-shadow: -3px 5px 23px -5px rgba(0,0,0,0.61);

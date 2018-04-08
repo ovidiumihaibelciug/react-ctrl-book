@@ -5,7 +5,14 @@ import HeaderBox from '../components/home/HeaderBox';
 import SecondaryNav from '../components/SecondaryNav';
 import SideBar from '../components/home/SideBar';
 
+import { fetchBooks } from '../actions/bookActions';
+import { connect } from 'react-redux';
+
 class HomeContainer extends Component {
+
+    componentWillMount = () => {
+        this.props.fetchBooks();
+    }
 
     render() {
         let img = ['https://marketplace.canva.com/MAB___U-clw/1/0/thumbnail_large/canva-yellow-lemon-children-book-cover-MAB___U-clw.jpg', 
@@ -28,9 +35,12 @@ class HomeContainer extends Component {
                     <div className="right-side-container">
                         <SecondaryNav title="Popular by Genre" categories={categories}/>
                         <div className="book-list">
-                            <BookBox />
-                            <BookBox />
-                            <BookBox />
+                            {/* <BookBox key="1" />
+                            <BookBox key="2" />
+                            <BookBox key="3" /> */}
+                            {this.props.books.map(book => {
+                                return <BookBox key={book.id} book={book} />
+                            })}
                         </div>
                     </div>
                 </div>
@@ -39,4 +49,9 @@ class HomeContainer extends Component {
     }
 }
 
-export default HomeContainer;
+const mapStateToProps = state => ({
+    books: state.books.books
+})
+
+
+export default connect(mapStateToProps, { fetchBooks })(HomeContainer);

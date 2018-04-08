@@ -1,8 +1,8 @@
 import { FETCH_BOOKS, NEW_BOOK } from '../constants/types';
 
 const initialState = {
-    items: [],
-    item: {}
+    books: [],
+    book: {}
 }
 
 export default function(state = initialState, action) {
@@ -11,7 +11,7 @@ export default function(state = initialState, action) {
             console.log(action.payload.data)
             return {
                 ...state,
-                items: action.payload.data
+                books: action.payload.data.items
             };
 
         default: 
