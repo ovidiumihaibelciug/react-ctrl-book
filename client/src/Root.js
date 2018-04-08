@@ -12,9 +12,17 @@ const routes = [
         component: Home
     },
     {
+        path: '/profile',
+        component: Profile
+    },
+    {
         path: '/profile/:username',
         component: Profile
-    }   
+    },
+    {
+        path: '/:genre',
+        component: Home
+    },
 ];
 
 const Root = ({ store }) => (

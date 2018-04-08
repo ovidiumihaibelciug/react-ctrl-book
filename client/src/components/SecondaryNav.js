@@ -11,7 +11,7 @@ export class SecondaryNav extends Component {
             {
                 categories.map(category => {
                     let activeClass = category.active ? 'active-secnav' : '';
-                    return (<a href="" key={category.name} className={'navbar-item ' +  activeClass}>{category.name}</a>);
+                    return (<a href={'/' + category.value} key={category.name} className={'navbar-item ' +  activeClass}>{category.name}</a>);
                 })
             }
         </div>

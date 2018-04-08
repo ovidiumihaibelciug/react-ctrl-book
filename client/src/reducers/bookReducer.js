@@ -1,4 +1,4 @@
-import { FETCH_BOOKS, NEW_BOOK } from '../constants/types';
+import { FETCH_BOOKS, FETCH_BOOKS_BY_GENRE } from '../constants/types';
 
 const initialState = {
     books: [],
@@ -8,12 +8,15 @@ const initialState = {
 export default function(state = initialState, action) {
     switch(action.type) {
         case FETCH_BOOKS:
-            console.log(action.payload.data)
             return {
                 ...state,
                 books: action.payload.data.items
             };
-
+        case FETCH_BOOKS_BY_GENRE:
+            return {
+                ...state,
+                books: action.payload.data.items
+            };
         default: 
             return state;
     }

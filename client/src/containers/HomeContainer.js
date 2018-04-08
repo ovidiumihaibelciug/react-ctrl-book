@@ -5,13 +5,19 @@ import HeaderBox from '../components/home/HeaderBox';
 import SecondaryNav from '../components/SecondaryNav';
 import SideBar from '../components/home/SideBar';
 
-import { fetchBooks } from '../actions/bookActions';
+import { fetchBooks, fetchBooksByGenre } from '../actions/bookActions';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom'
 
 class HomeContainer extends Component {
 
     componentWillMount = () => {
-        this.props.fetchBooks();
+        const genre = this.props.match.params.genre;
+        if (!genre) {
+            this.props.fetchBooks();
+        } else {
+            this.props.fetchBooksByGenre(genre);            
+        }
     }
 
     render() {
@@ -19,7 +25,20 @@ class HomeContainer extends Component {
         'https://about.canva.com/wp-content/uploads/sites/3/2015/01/children_bookcover.png', 
         'http://www.creativindie.com/wp-content/uploads/2013/10/Enchantment-Book-Cover-Best-Seller1.jpg'
         ];
-        let categories = [{name: "All Genres", active: true}, {name: "Business", active: false}, {name: "Science", active: false},{name: "Fiction", active: false}]; 
+        const genre = this.props.match.params.genre;
+        let categories = [
+            {name: "All Genres", value: "", active: false}, 
+            {name: "Business", value: "business", active: false}, 
+            {name: "Science", value: "science", active: false},
+            {name: "Fiction", value: "fiction", active: false}
+        ];
+        if (genre) {
+            const a = categories.lastIndexOf(categories.find(category => category.value === genre));
+            categories[a].active = true;
+        } else {
+            categories[0].active = true;
+        }
+        
         return (
             <div className="home-container">
                 <div className="home-header">
@@ -30,14 +49,11 @@ class HomeContainer extends Component {
                 <div className="home-body container">
                     <div className="left-side">
                         <SideBar />
+                        {this.props.match.params.genre}
                     </div>
-                    {/* <div></div> */}
                     <div className="right-side-container">
                         <SecondaryNav title="Popular by Genre" categories={categories}/>
                         <div className="book-list">
-                            {/* <BookBox key="1" />
-                            <BookBox key="2" />
-                            <BookBox key="3" /> */}
                             {this.props.books.map(book => {
                                 return <BookBox key={book.id} book={book} />
                             })}
@@ -54,4 +70,4 @@ const mapStateToProps = state => ({
 })
 
 
-export default connect(mapStateToProps, { fetchBooks })(HomeContainer);
+export default withRouter(connect(mapStateToProps, { fetchBooks, fetchBooksByGenre })(HomeContainer));
