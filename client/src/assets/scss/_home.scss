@@ -247,7 +247,7 @@
                 }
                 .right-side {
                     display: grid;
-                    grid-template-rows: 5% 25% 15% 15% auto 15%;
+                    grid-template-rows: 5% 25% 15% 15% auto;
                     margin-left: 20px;
                     .settings {
                         text-align: right !important;
@@ -281,10 +281,21 @@
                     .description {
                         font-size: .9rem;
                         color: #34495e;
-                        line-height: 1.4rem;
                         letter-spacing: 0.1px;
                         font-weight: 300;
                         width: 100%;
+                        overflow: hidden;
+                        width: 100%;    
+                        text-overflow: ellipsis;
+                        -ms-text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 4; /* number of lines to show */
+                        line-height: 1.2rem;        /* fallback */
+                        max-height: calc(1.2rem*4);
+                        * {
+                            text-overflow: ellipsis;
+                        }
                     }
                 }
                 .left-side {
