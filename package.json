@@ -1,34 +1,27 @@
 {
   "name": "react-ctrl-book",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "chokidar": "^2.0.2",
-    "font-awesome": "^4.7.0",
-    "node-sass": "^4.7.2",
-    "node-sass-chokidar": "^1.1.2",
-    "npm-run-all": "^4.1.2",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-scripts": "1.1.1"
-  },
+  "version": "1.0.0",
+  "description": "Social network for readers",
+  "main": "server.js",
   "scripts": {
-    "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/assets/scss -o src/dist --watch --recursive",
-    "start-js": "react-scripts start",
-    "start": "npm-run-all -p watch-css start-js",
-    "build-js": "react-scripts build",
-    "build": "npm-run-all build-css build-js",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ovidiumihaibelciug/react-ctrl-book.git"
+  },
+  "author": "Belciug Ovidiu-Mihai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ovidiumihaibelciug/react-ctrl-book/issues"
+  },
+  "homepage": "https://github.com/ovidiumihaibelciug/react-ctrl-book#readme",
+  "dependencies": {
+    "express": "^4.16.3"
   },
   "devDependencies": {
-    "axios": "^0.18.0",
-    "react-bootstrap": "^0.32.1",
-    "react-redux": "^5.0.7",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
-    "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0"
+    "concurrently": "^3.5.1"
   }
 }
