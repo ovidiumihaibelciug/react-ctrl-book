@@ -25,7 +25,6 @@ export default class BookBox extends Component {
     let authors = [];
     let rating = 0;
     if (volumeInfo) {
-      console.log(volumeInfo);
       rating = !volumeInfo.averageRating
         ? 0
         : Math.floor(volumeInfo.averageRating);
@@ -39,7 +38,7 @@ export default class BookBox extends Component {
     return (
       <div className="book-box">
         <div className="left-side">
-          <img src={volumeInfo.imageLinks.thumbnail} className="image" alt="" />
+          <img src={volumeInfo.imageLinks ? volumeInfo.imageLinks.thumbnail : "default"} className="image" alt="" />
         </div>
         <div className="right-side">
           <div className="settings">

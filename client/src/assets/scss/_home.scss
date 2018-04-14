@@ -346,7 +346,7 @@
             border: 1px solid transparent;
             word-wrap: none !important;
             &:hover, &:hover &:not(.active-secnav) {
-                color: $navbar_secondary;
+                color: $navbar_primary;
                 // border-bottom: 1px solid;
                 border-bottom-style: solid;
                 border-bottom-color: $navbar_secondary;
@@ -354,6 +354,7 @@
             &:active, &.active-secnav {
                 color: $navbar_primary;
                 position: relative;
+                border: none;
                 &:before {
                     content : "";
                     position: absolute;

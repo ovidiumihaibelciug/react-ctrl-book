@@ -20,20 +20,20 @@ const routes = [
     component: Home
   },
   {
+    path: "/category/:genre/:page",
+    component: Home
+  },
+  {
     path: "/profile",
+    component: Profile
+  },
+  {
+    path: "/profile/:username",
     component: Profile
   },
   {
     path: "/:genre",
     component: Home
-  },
-  {
-    path: "/:genre/:page",
-    component: Home
-  },
-  {
-    path: "/profile/:username",
-    component: Profile
   }
 ];
 

@@ -5,10 +5,14 @@ export const fetchBooks = (page = 0) => dispatch => {
   return new Promise((reject, resolve) => {
     axios
       .get(
-        "https://www.googleapis.com/books/v1/volumes/?q=a&startIndex=" + page
+        "https://www.googleapis.com/books/v1/volumes/?q=book&startIndex=" +
+          page +
+          "&orderBy=" +
+          "relevance"
       )
       .then(data => {
         if (data.status === 200) {
+          console.log("DONE");
           dispatch({
             type: FETCH_BOOKS,
             payload: data
@@ -26,7 +30,9 @@ export const fetchBooksByGenre = (genre, page = 0) => dispatch => {
         "https://www.googleapis.com/books/v1/volumes?q=subject:" +
           genre +
           "&startIndex=" +
-          page
+          page +
+          "&orderBy=" +
+          "relevance"
       )
       .then(data => {
         if (data.status === 200) {

@@ -27,11 +27,12 @@ class HomeContainer extends Component {
 
   render() {
     const genre = this.props.match.params.genre;
+    const loading = this.props.loading;
     const page = this.props.match.params.page
       ? parseInt(this.props.match.params.page)
       : 1;
     let output = [];
-    let path = genre ? "/" + genre + "/" : "/page/";
+    let path = genre ? "/category/" + genre + "/" : "/page/";
     if (page === 1) {
       output = [
         <a href={path + page} className="page-active">
@@ -81,13 +82,18 @@ class HomeContainer extends Component {
           </div>
           <div className="right-side-container">
             <SecondaryNav title="Popular by Genre" categories={categories} />
-            <div className="book-list">
-              {this.props.books.map(book => {
-                return <BookBox key={book.id} book={book} />;
-              })}
-            </div>
-            <div className="book-links">{output}</div>
+
+            {!loading ? (
+              <div className="book-list">
+                {this.props.books.map(book => {
+                  return <BookBox key={book.id} book={book} />;
+                })}
+              </div>
+            ) : (
+              <div className="book-loader" />
+            )}
           </div>
+          <div className="book-links">{!this.state.loading ? output : ""}</div>
         </div>
       </div>
     );
@@ -95,7 +101,8 @@ class HomeContainer extends Component {
 }
 
 const mapStateToProps = state => ({
-  books: state.books.books
+  books: state.books.books,
+  loading: state.books.isFetching
 });
 
 export default withRouter(
