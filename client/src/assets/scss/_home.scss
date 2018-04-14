@@ -429,3 +429,24 @@
     }
     
 }
+
+.book-links {
+    text-align: center;
+    margin-top: -$home-margin*1.5;
+    a {
+        padding: 10px 12px;
+        margin: 0 5px;
+        border-radius: 2px;
+        background: white;
+        border: 2px solid $box-border-color;
+        font-weight: 600;
+        color: $secondary-text;
+        &:hover {
+            cursor: pointer;
+            background-color: rgba($color: $secondary-text, $alpha: .1)
+        }
+        &.page-active {
+            color: $navbar_primary;
+        }
+    }
+}
