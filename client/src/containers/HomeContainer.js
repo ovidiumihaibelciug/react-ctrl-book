@@ -16,8 +16,10 @@ class HomeContainer extends Component {
     const page = this.props.match.params.page - 1;
     if (!genre && !page) {
       this.props.fetchBooks();
+    } else if (genre && page) {
+      this.props.fetchBooksByGenre(genre, page);
     } else if (genre && !page) {
-      this.props.fetchBooksByGenre(genre);
+      this.props.fetchBooksByGenre(genre, 0);
     } else if (!genre && page) {
       this.props.fetchBooks(page * 10 - page);
     }
@@ -29,28 +31,29 @@ class HomeContainer extends Component {
       ? parseInt(this.props.match.params.page)
       : 1;
     let output = [];
+    let path = genre ? "/" + genre + "/" : "/page/";
     if (page === 1) {
       output = [
-        <a href={"/page/" + page} className="page-active">
+        <a href={path + page} className="page-active">
           {page}
         </a>,
-        <a href={"/page/" + (page + 1)}>{page + 1}</a>,
-        <a href={"/page/" + (page + 2)}>{page + 2}</a>,
-        <a href={"/page/" + (page + 3)}>
+        <a href={path + (page + 1)}>{page + 1}</a>,
+        <a href={path + (page + 2)}>{page + 2}</a>,
+        <a href={path + (page + 3)}>
           <i className="fa fa-arrow-right" />
         </a>
       ];
     } else {
       output = [
-        <a href={"/page/" + (page - 2)}>
+        <a href={path + (page - 2)}>
           <i className="fa fa-arrow-left" />
         </a>,
-        <a href={"/page/" + (page - 1)}>{page - 1}</a>,
-        <a href={"/page/" + page} className="page-active">
+        <a href={path + (page - 1)}>{page - 1}</a>,
+        <a href={path + page} className="page-active">
           {page}
         </a>,
-        <a href={"/page/" + (page + 1)}>{page + 1}</a>,
-        <a href={"/page/" + (page + 2)}>
+        <a href={path + (page + 1)}>{page + 1}</a>,
+        <a href={path + (page + 2)}>
           <i className="fa fa-arrow-right" />
         </a>
       ];
@@ -74,7 +77,7 @@ class HomeContainer extends Component {
         <div className="home-body container">
           <div className="left-side">
             <SideBar />
-            {this.props.match.params.genre}
+            {/* {this.props.match.params.genre} */}
           </div>
           <div className="right-side-container">
             <SecondaryNav title="Popular by Genre" categories={categories} />

@@ -19,10 +19,15 @@ export const fetchBooks = (page = 0) => dispatch => {
   });
 };
 
-export const fetchBooksByGenre = genre => dispatch => {
+export const fetchBooksByGenre = (genre, page = 0) => dispatch => {
   return new Promise((reject, resolve) => {
     axios
-      .get("https://www.googleapis.com/books/v1/volumes?q=subject:" + genre)
+      .get(
+        "https://www.googleapis.com/books/v1/volumes?q=subject:" +
+          genre +
+          "&startIndex=" +
+          page
+      )
       .then(data => {
         if (data.status === 200) {
           dispatch({

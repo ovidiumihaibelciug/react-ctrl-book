@@ -24,12 +24,16 @@ const routes = [
     component: Profile
   },
   {
-    path: "/profile/:username",
-    component: Profile
-  },
-  {
     path: "/:genre",
     component: Home
+  },
+  {
+    path: "/:genre/:page",
+    component: Home
+  },
+  {
+    path: "/profile/:username",
+    component: Profile
   }
 ];
 
