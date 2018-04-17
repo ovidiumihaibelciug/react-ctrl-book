@@ -5,13 +5,19 @@ import HeaderBox from "../components/home/HeaderBox";
 import SecondaryNav from "../components/SecondaryNav";
 import SideBar from "../components/home/SideBar";
 
-import { fetchBooks, fetchBooksByGenre } from "../actions/bookActions";
+import {
+  fetchBooks,
+  fetchBooksByGenre,
+  fetchTop3
+} from "../actions/bookActions";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { maxResults, maxResultsPerPage, categories, img } from "../utils";
+import { categories, img } from "../utils";
 
 class HomeContainer extends Component {
   componentWillMount = () => {
+    this.props.fetchTop3();
+
     const genre = this.props.match.params.genre;
     const page = this.props.match.params.page - 1;
     if (!genre && !page) {
@@ -71,9 +77,9 @@ class HomeContainer extends Component {
     return (
       <div className="home-container">
         <div className="home-header">
-          <HeaderBox color="box-blue" cover={img[0]} />
-          <HeaderBox color="box-purple" cover={img[1]} />
-          <HeaderBox color="box-red" cover={img[2]} />
+          {this.props.topBooks.map(book => (
+            <HeaderBox key={book.rank} color="box-blue" book={book} />
+          ))}
         </div>
         <div className="home-body container">
           <div className="left-side">
@@ -92,8 +98,8 @@ class HomeContainer extends Component {
             ) : (
               <div className="book-loader" />
             )}
+            <div className="book-links">{!loading ? output : ""}</div>
           </div>
-          <div className="book-links">{!this.state.loading ? output : ""}</div>
         </div>
       </div>
     );
@@ -102,12 +108,14 @@ class HomeContainer extends Component {
 
 const mapStateToProps = state => ({
   books: state.books.books,
-  loading: state.books.isFetching
+  loading: state.books.isFetching,
+  topBooks: state.books.topBooks
 });
 
 export default withRouter(
   connect(mapStateToProps, {
     fetchBooks,
-    fetchBooksByGenre
+    fetchBooksByGenre,
+    fetchTop3
   })(HomeContainer)
 );

@@ -11,3 +11,13 @@ export const img = [
   "https://about.canva.com/wp-content/uploads/sites/3/2015/01/children_bookcover.png",
   "http://www.creativindie.com/wp-content/uploads/2013/10/Enchantment-Book-Cover-Best-Seller1.jpg"
 ];
+
+export const keys = {
+  nyt: "140f7f056f224652afe035ea4e4c48e2",
+  gbooks: "AIzaSyApF6FdLBCaiHNHtiW06n09dvoJdfiQEmM"
+};
+
+export const apis = {
+  gbooks: "",
+  nyt: ""
+};

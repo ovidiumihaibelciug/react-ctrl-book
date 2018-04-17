@@ -1,18 +1,20 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 // import PropTypes from 'prop-types'
 
-import Navbar from '../components/Navbar';
-import HomeContainer from '../containers/HomeContainer';
+import Footer from "../components/Footer";
+import HomeContainer from "../containers/HomeContainer";
+import Navbar from "../components/Navbar";
 
 export class Home extends Component {
   render() {
     return (
       <div>
-          <Navbar />
-          <HomeContainer />
+        <Navbar />
+        <HomeContainer />
+        <Footer />
       </div>
-    )
+    );
   }
 }
 
-export default Home
+export default Home;

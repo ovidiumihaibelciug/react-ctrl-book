@@ -1,38 +1,44 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import Rating from '../Rating';
+import Rating from "../Rating";
 
 class HeaderBox extends Component {
-
-    render() {
-        let className = ['home-book-box', this.props.color].join(' ');
-        let img = this.props.cover;
-        return (
-            <div className={className}>
-                <div className="row home-book-box-content">
-                    <div className="left-side">
-                        <div className="home-book-img" style={ { backgroundImage: `url(${img})` } }></div>
-                    </div>
-                    <div className="right-side">
-                        <div className="home-book-title-box">
-                            <div className="home-book-title">
-                                Adventure of Huckleberry Finn                            
-                            </div>
-                        </div>
-                        <div className="home-book-author">
-                            by <span>Emily Robbins</span>
-                        </div>
-                        <br />
-                        <div className="home-book-rating">
-                            <Rating score="3" />
-                        </div>
-                        <button className="home-book-btn" style={{color: this.props.color}}>See The Book</button>
-                       {/* <input type="submit" class="home-book-btn" value="See The Book" /> */}
-                    </div>
-                </div>
-            </div>
-        )
+  render() {
+    let className = ["home-book-box"];
+    const { book_details } = this.props.book;
+    if (this.props.book.rank % 3 == 0) {
+      className = [...className, "box-blue"].join(" ");
+    } else if (this.props.book.rank % 3 == 1) {
+      className = [...className, "box-red"].join(" ");
+    } else {
+      className = [...className, "box-purple"].join(" ");
     }
+    return (
+      <div className={className}>
+        <div className="row home-book-box-content">
+          <div className="left-side">
+            <div
+              className="home-book-img"
+              style={{
+                backgroundImage: `url(${book_details[0].smallThumbnail})`
+              }}
+            />
+          </div>
+          <div className="right-side">
+            <div className="home-book-title-box">
+              <div className="home-book-title">{book_details[0].title}</div>
+            </div>
+            <div className="home-book-author">
+              by <span>{book_details[0].author}</span>
+            </div>
+            <br />
+            <div className="home-book-rank">#{this.props.book.rank}</div>
+            <button className="home-book-btn">See The Book</button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default HeaderBox;

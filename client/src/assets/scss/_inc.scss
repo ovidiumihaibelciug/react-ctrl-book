@@ -66,6 +66,7 @@ footer {
   background-color: #1B1B1B;
   padding: $footer-padding;
   color: white;
+  margin-top: $home-margin*2;
   .container {  
     display: grid;
     grid-template-rows: 10% auto;
@@ -86,6 +87,7 @@ footer {
           height: 50px;
           border-radius: 50%;
           &:hover {
+            cursor: pointer;
             ul {
               transform: scale(1); 
               box-shadow: 0 0 0 2px #1b3646, 0 0 0 4px #fff, 0 5px 30px rgba(0, 0, 0, 1);
@@ -178,7 +180,15 @@ footer {
             z-index: 1;
             box-shadow: 0 0 0 2px #112833;
             i {
-              color: #112833 !important;              
+              color: #112833 !important;   
+              transform: rotate(0) scale(1);
+              transition: .6s ease-in-out;                  
+            }
+            &:hover {
+              i {
+                transform: rotate(360deg) scale(1.5);
+                transition: .6s ease-in-out;
+              }
             }
           }
         } 

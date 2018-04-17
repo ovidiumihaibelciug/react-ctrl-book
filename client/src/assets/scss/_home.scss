@@ -221,7 +221,7 @@
     margin-top: 120px;
     display: grid;
     grid-template-columns: 240px auto;
-    grid-template-rows: 240px auto;
+    grid-template-rows: 240px 100;
     .right-side-container {
         .book-list {
             display: grid;
